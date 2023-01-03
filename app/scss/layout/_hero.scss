@@ -1,0 +1,41 @@
+@use "../utils/" as u;
+
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: u.rem(50);
+  min-height: 60vh;
+  max-width: 70%;
+  margin-inline: auto auto;
+
+  &__description {
+    margin-bottom: u.rem(100);
+
+    h1 {
+      font-size: clamp(u.rem(50), u.rem(20) + 2vh, u.rem(16));
+      text-align: center;
+      margin-bottom: u.rem(30);
+
+      @include u.breakpoint-up(medium) {
+        font-size: u.rem(60);
+      }
+    }
+    p {
+      text-align: center;
+      margin-bottom: u.rem(40);
+    }
+    .cta-btns {
+      text-align: center;
+      font-size: u.rem(15);
+
+      > .non-colored {
+        border-radius: u.rem(23);
+        &:hover {
+          background: u.$hover;
+        }
+      }
+    }
+  }
+}

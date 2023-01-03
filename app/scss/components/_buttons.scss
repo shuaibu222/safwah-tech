@@ -1,0 +1,14 @@
+@use "../utils" as u;
+
+.cta-btn {
+  padding: u.rem(11) u.rem(13);
+  color: u.$font-color;
+  border: 2px solid white;
+  border-radius: 7px;
+  transition: 300ms ease-in-out;
+
+  &.colored {
+    background: u.$font-color;
+    color: midnightblue;
+  }
+}

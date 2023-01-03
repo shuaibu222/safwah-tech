@@ -1,0 +1,93 @@
+@use "../utils" as u;
+
+.bg-color {
+  min-height: 65vh;
+  background-color: u.$font-color;
+}
+.services {
+  margin-top: u.rem(30);
+  margin-inline: auto auto;
+  padding-top: u.rem(50);
+  padding-bottom: u.rem(50);
+
+  &__heading {
+    text-align: center;
+    font-size: u.rem(40);
+    color: midnightblue;
+  }
+
+  &__agile {
+    margin-top: u.rem(15);
+    text-align: center;
+    font-size: u.rem(17);
+    color: midnightblue;
+  }
+
+  &__cards {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr;
+    place-items: center;
+    color: midnightblue;
+
+    @include u.breakpoint-up(small) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include u.breakpoint-up(medium) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .card {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      margin: 5px;
+      color: u.$text-blue;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      max-width: u.rem(250);
+      height: u.rem(300);
+      padding: u.rem(10);
+      text-align: center;
+      border-radius: 8px;
+      border-top: 7px solid midnightblue;
+      transition: all 0.2s ease-in-out;
+
+      > .bottom-border {
+        height: u.rem(2);
+        width: u.rem(30);
+        margin-bottom: u.rem(40);
+        margin-top: u.rem(20);
+        background: midnightblue;
+      }
+
+      > p {
+        font-size: u.rem(15);
+      }
+      > .card-text {
+        font-size: u.rem(12);
+      }
+
+      > svg {
+        width: u.rem(40);
+        margin-bottom: u.rem(20);
+      }
+
+      &:hover {
+        transform: scale(1.05, 1.03);
+        background-color: midnightblue;
+        color: u.$font-color;
+
+        &:hover path {
+          fill: u.$font-color;
+        }
+
+        &:hover .bottom-border {
+          background: whitesmoke;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,48 @@
+@use "../utils/" as u;
+
+.projects {
+  min-height: 80vh;
+  max-width: 90vw;
+  margin-inline: auto;
+  padding-top: u.rem(50);
+  padding-bottom: u.rem(50);
+  color: midnightblue;
+
+  &__heading {
+    font-size: u.rem(40);
+    text-align: center;
+  }
+
+  &__cards-items {
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+
+    @include u.breakpoint-up(xlarge) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+    > a .cards {
+      padding: 10px;
+      max-width: u.rem(400);
+      height: u.rem(200);
+      background: whitesmoke;
+      color: midnightblue;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      border-radius: 7px;
+      display: grid;
+      place-items: center;
+      font-size: u.rem(15);
+      text-align: center;
+      cursor: pointer;
+      transition: 100ms ease-in-out;
+
+      &:hover {
+        transform: scale(1.1, 1.1);
+        background: midnightblue;
+        color: u.$font-color;
+      }
+    }
+  }
+}

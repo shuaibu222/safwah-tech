@@ -1,0 +1,94 @@
+@use "../utils/" as u;
+
+html {
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica,
+    Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  scroll-behavior: smooth;
+  font-size: 100%;
+}
+
+/* Default styles */
+/* inheritance of from html */
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+body {
+  min-height: 100vh;
+  margin-inline: auto;
+  background: midnightblue;
+  color: u.$font-color;
+  letter-spacing: u.rem(2);
+}
+.container {
+  max-width: 90vw;
+  margin-inline: auto;
+}
+a {
+  text-decoration: none;
+  color: u.$font-color;
+}
+li {
+  list-style-type: none;
+}
+.title-border {
+  height: u.rem(4);
+  max-width: u.rem(230);
+  margin-inline: auto;
+  margin-top: u.rem(30);
+  margin-bottom: u.rem(90);
+  background: midnightblue;
+}
+.title-border-diff {
+  @extend .title-border;
+  background: whitesmoke;
+}
+// logo design
+
+.logo {
+  color: midnightblue;
+  border: 2px solid u.$font-color;
+  background-color: u.$font-color;
+  padding: 1px;
+  font-size: u.rem(23);
+  font-family: Impact;
+  letter-spacing: u.rem(3);
+  font-weight: normal;
+}
+
+// display: none; class for javascript purpose.
+
+.hidden {
+  display: none;
+}
+
+// display: block; class for javascript purpose.
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}

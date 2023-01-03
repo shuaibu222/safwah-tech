@@ -1,0 +1,59 @@
+@use "../utils/" as u;
+
+.footer {
+  padding-top: u.rem(40);
+  padding-bottom: u.rem(40);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  @include u.breakpoint-up(medium) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
+  > .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include u.breakpoint-up(medium) {
+      align-items: flex-start;
+    }
+
+    > .logo {
+      max-width: u.rem(220);
+      margin-bottom: u.rem(50);
+      font-size: u.rem(20);
+    }
+    > .social-media {
+      margin-bottom: u.rem(70);
+
+      @include u.breakpoint-up(medium) {
+        margin-bottom: u.rem(1);
+      }
+      :not(:last-child) {
+        margin-right: u.rem(7);
+      }
+      > span svg {
+        width: u.rem(25);
+
+        &:hover path {
+          fill: rgba(233, 233, 233, 0.827);
+        }
+      }
+    }
+  }
+  > .right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: u.rem(11);
+
+    @include u.breakpoint-up(medium) {
+      font-size: u.rem(15);
+      align-items: flex-end;
+      justify-content: flex-end;
+    }
+  }
+}

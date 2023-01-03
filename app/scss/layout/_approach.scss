@@ -1,0 +1,80 @@
+@use "../utils/" as u;
+
+.approach {
+  padding-top: u.rem(50);
+  padding-bottom: u.rem(50);
+  min-height: 60vh;
+  color: u.$font-color;
+
+  &__heading {
+    font-size: u.rem(40);
+    text-align: center;
+    margin-bottom: u.rem(20);
+  }
+
+  &__agile {
+    text-align: center;
+    font-size: u.rem(17);
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: u.rem(20);
+    border: 2px solid whitesmoke;
+    border-radius: 7px;
+    padding: u.rem(20);
+
+    @include u.breakpoint-up(medium) {
+      padding: u.rem(40);
+    }
+
+    > .titles ul li {
+      display: flex;
+      justify-content: space-between;
+      border: 2px solid whitesmoke;
+      border-radius: 5px;
+      padding: u.rem(12);
+      font-size: u.rem(13);
+      color: u.$font-color;
+      cursor: pointer;
+      transition: all 150ms ease-in-out;
+
+      &:hover {
+        background: whitesmoke;
+        color: midnightblue;
+
+        &:hover path {
+          fill: midnightblue;
+        }
+      }
+
+      @include u.breakpoint-up(medium) {
+        font-size: u.rem(15);
+      }
+
+      > span svg {
+        width: 12px;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: u.rem(5);
+      }
+    }
+
+    > .content {
+      grid-column: span 2;
+      padding: u.rem(10) u.rem(10);
+      border-radius: 5px;
+      background: whitesmoke;
+      color: u.$text-blue;
+    }
+    > .content p {
+      font-size: u.rem(12);
+
+      @include u.breakpoint-up(medium) {
+        font-size: u.rem(16);
+      }
+    }
+  }
+}
