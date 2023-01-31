@@ -20,7 +20,7 @@
 
 ### Links
 
-- Live Site URL: [safwah-tech site](https://www.newshomepagementor.com)
+- Live Site URL: [https://68162ae5.safwah-tech.pages.dev/](https://68162ae5.safwah-tech.pages.dev/)
 
 ### Built with
 
