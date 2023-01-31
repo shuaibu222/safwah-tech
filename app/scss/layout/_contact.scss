@@ -99,7 +99,7 @@
             transition: 200ms ease-in-out;
 
             &:hover {
-              background: rgba(233, 233, 233, 0.851);
+              background: hsla(60, 100%, 50%, 0.963);
             }
 
             @include u.breakpoint-down(small) {

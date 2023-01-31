@@ -2,13 +2,7 @@
 
 const hamburgerBtn = document.getElementById("btnHamburger");
 const header = document.querySelector(".header");
-const hasFade = document.querySelector(".has-fade");
-
-// *********** tabs DOM *********** //
-
-const approach = document.querySelector(".methodology");
-const tabs = document.querySelectorAll(".list-els");
-const content = document.querySelectorAll(".content");
+const hamburgerMenu = document.getElementById("hamburger");
 
 // *********** Navbar code *********** //
 
@@ -16,13 +10,23 @@ hamburgerBtn.addEventListener("click", function () {
   if (header.classList.contains("open")) {
     // For closing hamburger menu
     header.classList.remove("open");
-    hasFade.classList.add("has-fade");
+    hamburgerMenu.classList.add("hidden");
+    hamburgerMenu.classList.add("fade-out");
+    hamburgerMenu.classList.remove("fade-in");
   } else {
     // For opening hamburger menu
     header.classList.add("open");
-    hasFade.classList.remove("has-fade");
+    hamburgerMenu.classList.remove("hidden");
+    hamburgerMenu.classList.add("fade-in");
+    hamburgerMenu.classList.remove("fade-out");
   }
 });
+
+// *********** tabs DOM *********** //
+
+const approach = document.querySelector(".methodology");
+const tabs = document.querySelectorAll(".list-els");
+const content = document.querySelectorAll(".content");
 
 // *********** Tabs code *********** //
 

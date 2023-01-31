@@ -75,10 +75,10 @@
 
   &__toggle-menu {
     background: u.$font-color;
-    width: 90%;
+    width: 100%;
     margin-inline: auto;
-    padding-top: u.rem(80);
-    padding-bottom: u.rem(80);
+    padding-top: u.rem(50);
+    padding-bottom: u.rem(50);
 
     ul {
       margin-top: u.rem(10);
@@ -95,7 +95,7 @@
 
 // Visibility
 
-.has-fade {
+.hidden {
   display: none;
 }
 
